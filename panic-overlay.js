@@ -250,7 +250,7 @@ const defaultConfig = {
             let dir = this.projectRoot
             dir = (dir[dir.length - 1] == '/') ? dir : (dir + '/')
             
-            window.location = `vscode://file/${root}${entry.fileRelative}:${entry.line}:${entry.column}`
+            window.location = `vscode://file/${dir}${entry.fileRelative}:${entry.line}:${entry.column}`
         }
     }
 }
