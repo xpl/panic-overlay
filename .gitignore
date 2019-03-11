@@ -3,6 +3,7 @@
 .cache
 demo/*/.cache
 demo/*/dist
+dist
 
 # Logs
 logs
