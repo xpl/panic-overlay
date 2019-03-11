@@ -1,0 +1,51 @@
+{
+  "name": "panic-overlay",
+  "version": "1.0.0",
+  "description": "Displays JS errors in browsers. Shows sources. Opens locations in VS Code. Framework agnostic.",
+  "main": "panic-overlay.js",
+  "esnext": "panic-overlay.js",
+  "module": "panic-overlay.js",
+  "scripts": {
+    "demo-parcel-vanilla": "cd demo/parcel-vanilla && parcel index.html",
+    "demo-parcel-react": "cd demo/parcel-react && parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xpl/panic-overlay.git"
+  },
+  "keywords": [
+    "error overlay",
+    "error",
+    "overlay",
+    "gui",
+    "modal",
+    "popup",
+    "uncaught",
+    "unhandled",
+    "promise",
+    "unhandled exceptions",
+    "unhandled errors",
+    "stack trace",
+    "stacktrace",
+    "stack",
+    "sourcemap",
+    "error location",
+    "react",
+    "react-error-overlay",
+    "vscode"
+  ],
+  "author": "Vitaly Gordon <rocket.mind@gmail.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/xpl/panic-overlay/issues"
+  },
+  "homepage": "https://github.com/xpl/panic-overlay",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "dependencies": {
+    "stacktracey": "^1.2.109"
+  }
+}

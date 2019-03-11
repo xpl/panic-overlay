@@ -1,5 +1,6 @@
 import StackTracey from 'stacktracey'
 const { assign } = Object
+const { min, max } = Math
 
 /*  DOM HELPERS --------------------------------------------------------------------    */
 
@@ -174,6 +175,9 @@ document.head.appendChild (h ('style', `
 .panic-overlay__lines {
     color:rgb(187, 165, 165);
     font-size: 0.835em;
+}
+
+.panic-overlay__lines:not(.panic-overlay__no-fade) {
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
 }
@@ -274,25 +278,34 @@ function renderStackEntry (entry, i, message) {
 
     const { sourceFile = { lines: [] }, line, column, fileShort, calleeShort, fileRelative } = entry
 
-    const n = 5
-    const offset = Math.max (0, line - n)
-    const lines = sourceFile.lines.slice (line - n, line + n)
-    const lineNumberWidth = String (line + n).length
-    const hiliIndex = (line - offset - 1)
+    const lineIndex = line - 1
+    const maxLines  = sourceFile.lines.length
+    const window    = 4
+
+    let start = lineIndex - window,
+        end   = lineIndex + window + 2
+
+    if (start < 0)        { end   = min (end - start, maxLines);       start = 0         }
+    if (end   > maxLines) { start = max (0, start - (end - maxLines)); end   = maxLines  }
+
+    const lines = sourceFile.lines.slice (start, end)
+    const lineNumberWidth = String (start + lines.length).length
+    const hiliIndex = (line - start - 1)
     const hiliMsg = (i === 0) ? message : ''
+    const onLastLine = hiliIndex === (lines.length - 1)
 
     const className = '.stack-entry' + (shouldHideEntry (entry, i) ? '.stack-entry-hidden' : '')
     
     return h (className, { onclick () { config.stackEntryClicked (entry) } }, [
                 h ('.file', h ('strong', fileShort)),
-                h ('.lines', lines.length
+                h ('.lines' + (onLastLine ? '.no-fade' : ''), lines.length
                     ? lines.map ((text, i) => h ('.line' + ((i === hiliIndex) ? '.line-hili' : ''), [
-                        h ('span.line-number', String (offset + i + 1).padStart (lineNumberWidth, ' ')),
-                        h ('span.line-text',   (i === hiliIndex) ? renderHighlightedLine (text, column, hiliMsg) : text)
+                        h ('span.line-number', String (start + i + 1).padStart (lineNumberWidth, ' ')),
+                        h ('span.line-text', (i === hiliIndex) ? renderHighlightedLine (text, column, hiliMsg) : text)
                     ]))
                     : [h ('.line', [
                         h ('span.line-number', String (line)),
-                        h ('span.line-text.no-source', `… somewhere in ${calleeShort}() …`),
+                        h ('span.line-text.no-source', `… somewhere at ${calleeShort ? (calleeShort + '()') : '???'} …`),
                     ])]
                 )
             ])
@@ -300,7 +313,7 @@ function renderStackEntry (entry, i, message) {
 
 function renderHighlightedLine (text, column, msg) {
 
-    const [before, after] = [text.slice (0, column), text.slice (column)]
+    const [before, after] = [text.slice (0, column - 1), text.slice (column - 1)]
     return [before, h ('strong', after)/*, msg && h ('em', msg)*/]
 }
 
@@ -320,6 +333,8 @@ function panic (err) {
         }
     }
 
+    const showMore = () => modal.classList.remove ('panic-overlay__collapsed')
+
     const el = h ('.error', { _indexText: indexText }, [
                     h ('.error-title', [
                         h ('span.error-type', [err.type || err.constructor.name,  h ('span.error-counter', { style: 'display: none;' })]),
@@ -327,11 +342,11 @@ function panic (err) {
                     ]),
                     h ('.error-stack', [
                         ...stack.map ((e, i) => renderStackEntry (e, i, err.message)),
-                        h ('.more', h ('em',
-                                       { onclick () { modal.classList.remove ('panic-overlay__collapsed')} },
-                                       'show more'))
+                        h ('.more', h ('em', { onclick: showMore }, 'show more'))
                     ])
                 ])
+
+    if (!stack.find (shouldHideEntry)) showMore () // hides "show more" if nothing to show
 
     errors.insertBefore (el, errors.firstChild)
     if (errors.childElementCount > 10) errors.lastChild.remove () // prevents hang in case of vast number of errors
