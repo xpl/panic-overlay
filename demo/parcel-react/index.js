@@ -1,11 +1,9 @@
-import '../../panic-overlay'
+import panic from '../../panic-overlay'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
 function App () {
-    
-    wharrghabl ()
-    return <h1>Some random code</h1>
+    return <h1 style="">Oops!</h1>
 }
 
 ReactDOM.render (<App />, document.getElementById ('root'))

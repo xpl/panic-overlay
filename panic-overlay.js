@@ -1,4 +1,6 @@
 import StackTracey from 'stacktracey'
+import path from 'get-source/impl/path'
+
 const { assign } = Object
 const { min, max } = Math
 
@@ -248,13 +250,8 @@ const defaultConfig = {
     projectRoot: undefined,
 
     stackEntryClicked (entry) {
-        
-        if (this.projectRoot) {     //  Try open in VSCode
-
-            let dir = this.projectRoot
-            dir = (dir[dir.length - 1] == '/') ? dir : (dir + '/')
-            
-            window.location = `vscode://file/${dir}${entry.fileRelative}:${entry.line}:${entry.column}`
+        if (this.projectRoot) {
+            window.location = `vscode://file/${path.concat (dir, entry.fileRelative)}:${entry.line}:${entry.column}`
         }
     }
 }
