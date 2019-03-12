@@ -6,7 +6,7 @@ import 'panic-overlay'
 
 - Displays runtime errors in browsers
 - Full sourcemap support (shows original code, not transpiled)
-- Clickable locations (opens in VS Code)
+- Clickable locations (opens in VS Code), [see the notes here](https://github.com/xpl/panic-overlay#vs-code-notes)
 - Minimalistic implementation (bare DOM API), easily hackable
 - Uncluttered stacktraces (collapses third party library calls)
 
