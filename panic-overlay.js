@@ -31,6 +31,7 @@ const h = nanoscript ('panic-overlay__')
 document.head.appendChild (h ('style', `
 
 .panic-overlay__modal {
+    
     position: fixed;
     top: 0;
     right: 0;
@@ -45,12 +46,22 @@ document.head.appendChild (h ('style', `
     --left-pad: 60px;
 }
 
-.panic-overlay strong {
-    font-weight: bold;
+.panic-overlay__modal,
+.panic-overlay__modal * {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-family: Menlo, Monaco, "Courier New", Courier, monospace;
 }
 
-.panic-overlay__modal * {
-    font-family: Menlo, Monaco, "Courier New", Courier, monospace;
+.panic-overlay__modal span,
+.panic-overlay__modal em,
+.panic-overlay__modal strong {
+    display: inline;
+}
+
+.panic-overlay strong {
+    font-weight: bold;
 }
 
 .panic-overlay__hidden {
@@ -58,6 +69,8 @@ document.head.appendChild (h ('style', `
 }
 
 .panic-overlay__modal h1 {
+
+    color: black;
     margin: 0;
     padding: 0;
     font-size: 1.77em;
@@ -88,11 +101,10 @@ document.head.appendChild (h ('style', `
 
 .panic-overlay__error {
     margin: 1em 0 3em 0;
+    left:0;
 }
 
 .panic-overlay__error-title {
-    display: flex;
-    align-items: center;
     padding-right: 50px;
 }
 
