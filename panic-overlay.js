@@ -92,12 +92,15 @@ document.head.appendChild (h ('style', `
 
 .panic-overlay__error-title {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     padding-right: 50px;
 }
 
 .panic-overlay__error-type {
-    padding:0.8em 1em;
+    min-height: 2.8em;
+    display: flex;
+    align-items: center;
+    padding:0 1em;
     background: rgb(255, 0, 64);
     color: white;
     margin-right: 2em;
@@ -113,8 +116,10 @@ document.head.appendChild (h ('style', `
 }
 
 .panic-overlay__error-message {
+    display: flex;
+    align-items: center;
     font-weight:400;
-    line-height: 0.9em;
+    line-height: 1em;
 }
 
 .panic-overlay__error-stack {
