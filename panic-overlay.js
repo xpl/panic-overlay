@@ -112,7 +112,7 @@ document.head.appendChild (h ('style', `
 
 .panic-overlay__error-type {
     min-height: 2.8em;
-    display: flex;
+    display: flex !important;
     align-items: center;
     padding:0 1em;
     background: rgb(255, 0, 64);
@@ -130,7 +130,7 @@ document.head.appendChild (h ('style', `
 }
 
 .panic-overlay__error-message {
-    display: flex;
+    display: flex !important;
     align-items: center;
     font-weight:400;
     line-height: 1em;
