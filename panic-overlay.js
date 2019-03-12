@@ -270,7 +270,7 @@ const defaultConfig = {
 
     stackEntryClicked (entry) {
         if (this.projectRoot) {
-            window.location = `vscode://file/${path.concat (dir, entry.fileRelative)}:${entry.line}:${entry.column}`
+            window.location = `vscode://file/${path.concat (this.projectRoot, entry.fileRelative)}:${entry.line}:${entry.column}`
         }
     }
 }
