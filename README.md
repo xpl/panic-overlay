@@ -28,6 +28,8 @@ import panic from 'panic-overlay'
 panic.configure ({ projectRoot: '/full/path/to/my/project' })
 ```
 
+Also the feature seems not to be working on some occasions, see this issue here: https://github.com/Microsoft/vscode/issues/70328
+
 ## Hacking
 
 The `panic-overlay` is just a GUI for the [**`stacktracey`**](https://github.com/xpl/stacktracey) library that provides all the magic related to callstack parsing, source code extraction and filtering of the clutter. I also maintain that library, so any contributions to its code are welcome as well.
