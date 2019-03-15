@@ -1,8 +1,6 @@
-# `npm install panic-overlay`
+# panic-overlay
 
-```javascript
-import 'panic-overlay'
-```
+A lightweight standalone alternative to `react-error-overlay` that is not tied to React and works with any framework or even without one.
 
 - Displays runtime errors in browsers
 - Full sourcemap support (shows original code, not transpiled)
@@ -11,6 +9,16 @@ import 'panic-overlay'
 - Uncluttered stacktraces (collapses third party library calls)
 
 <img width="1420" alt="Screen Shot 2019-03-11 at 00 11 00" src="https://user-images.githubusercontent.com/1707/54091547-44332700-4392-11e9-81a8-8593c48980b1.png">
+
+## Installation
+
+```bash
+npm install panic-overlay
+```
+
+```javascript
+import 'panic-overlay'
+```
 
 ## Using Without A Bundler
 
