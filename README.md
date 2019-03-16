@@ -1,6 +1,8 @@
-# panic-overlay
+# panic-overlay 💥✨
 
-A lightweight standalone alternative to `react-error-overlay` that is not tied to React and works with any framework or even without one.
+A lightweight standalone plain JS alternative to `react-error-overlay` that is not tied to React / Webpack and works with any framework or even without one.
+
+If you miss that thing from `create-react-app` but do not want to use that framework (e.g. you want to use [Parcel](https://parceljs.org/) as a lightweight alternative) — here you go!
 
 - Displays runtime errors in browsers
 - Full sourcemap support (shows original code, not transpiled)
