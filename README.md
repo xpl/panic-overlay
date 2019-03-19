@@ -42,8 +42,6 @@ import panic from 'panic-overlay'
 panic.configure ({ projectRoot: '/full/path/to/my/project' })
 ```
 
-Also the feature seems not to be working on some occasions, see this issue here: https://github.com/Microsoft/vscode/issues/70328
-
 ## TODO
 
 - [ ] Implement parsing of React JSX errors ([see more here](https://github.com/parcel-bundler/parcel/issues/2765))
