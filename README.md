@@ -12,6 +12,8 @@ If you miss that thing from `create-react-app` but do not want to use that frame
 - Minimalistic implementation (bare DOM API), easily hackable
 - Uncluttered stacktraces (collapses third party library calls)
 
+## How It Looks
+
 <img width="1420" alt="Screen Shot 2019-03-11 at 00 11 00" src="https://user-images.githubusercontent.com/1707/54091547-44332700-4392-11e9-81a8-8593c48980b1.png">
 
 ## Installation
