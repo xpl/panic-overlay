@@ -277,8 +277,6 @@ const defaultConfig = {
 
 const config = defaultConfig
 
-function configure (cfg) { assign (config, defaultConfig, cfg) }
-
 /*  RENDERING --------------------------------------------------------------------------    */
 
 const errors = h ('.errors')
@@ -401,6 +399,6 @@ function toggle (yes) {
 /*  EXPORT --------------------------------------------------------------------------    */
 
 panic.toggle    = toggle
-panic.configure = configure
+panic.configure = function configure (cfg) { assign (config, defaultConfig, cfg); return panic }
 
 export default panic
