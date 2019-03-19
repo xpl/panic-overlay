@@ -4,6 +4,8 @@ A lightweight standalone plain JS alternative to `react-error-overlay` that is n
 
 If you miss that thing from `create-react-app` but do not want to use that framework (e.g. you want to use [Parcel](https://parceljs.org/) as a lightweight alternative) — here you go!
 
+## Features
+
 - Displays runtime errors in browsers
 - Full sourcemap support (shows original code, not transpiled)
 - Clickable locations (opens in VS Code), [see the notes here](https://github.com/xpl/panic-overlay#vs-code-notes)
