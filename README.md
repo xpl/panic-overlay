@@ -1,6 +1,4 @@
-# panic-overlay 💥✨
-
-[![Build Status](https://travis-ci.org/xpl/panic-overlay.svg?branch=master)](https://travis-ci.org/xpl/panic-overlay) [![NPM](https://img.shields.io/npm/v/panic-overlay.svg)](http://npmjs.com/package/panic-overlay)
+# panic-overlay 💥✨[![Build Status](https://travis-ci.org/xpl/panic-overlay.svg?branch=master)](https://travis-ci.org/xpl/panic-overlay) [![NPM](https://img.shields.io/npm/v/panic-overlay.svg)](http://npmjs.com/package/panic-overlay)
 
 A lightweight standalone plain JS alternative to `react-error-overlay` that is not tied to React / Webpack and works with any framework or even without one.
 
