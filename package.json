@@ -1,6 +1,6 @@
 {
   "name": "panic-overlay",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Displays JS errors in browsers. Shows sources. Opens locations in VS Code. Framework agnostic.",
   "main": "panic-overlay.js",
   "esnext": "panic-overlay.js",
