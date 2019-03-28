@@ -1,5 +1,7 @@
 # panic-overlay 💥✨
 
+[![Build Status](https://travis-ci.org/xpl/panic-overlay.svg?branch=master)](https://travis-ci.org/xpl/panic-overlay) [![NPM](https://img.shields.io/npm/v/panic-overlay.svg)](http://npmjs.com/package/panic-overlay)
+
 A lightweight standalone plain JS alternative to `react-error-overlay` that is not tied to React / Webpack and works with any framework or even without one.
 
 If you miss that thing from `create-react-app` but do not want to use that framework (e.g. you want to use [Parcel](https://parceljs.org/) as a lightweight alternative) — here you go!

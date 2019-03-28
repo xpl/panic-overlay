@@ -7,7 +7,9 @@
   "module": "panic-overlay.js",
   "scripts": {
     "demo-parcel-vanilla": "cd demo/parcel-vanilla && parcel index.html",
-    "demo-parcel-react": "cd demo/parcel-react && parcel index.html"
+    "demo-parcel-react": "cd demo/parcel-react && parcel index.html",
+    "lint": "eslint panic-overlay.js",
+    "build": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -43,11 +45,12 @@
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
-    "parcel-bundler": "^1.12.0",
+    "eslint": "^4.19.1",
+    "parcel-bundler": "^1.12.3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
   "dependencies": {
-    "stacktracey": "^1.2.109"
+    "stacktracey": "^1.2.110"
   }
 }

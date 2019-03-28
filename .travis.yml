@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- '8'
+script:
+- set -e
+- npm run build
+after_success:
+- git config --global user.email "travis@travis-ci.org"
+- git config --global user.name "Travis CI"
+- npm config set git-tag-version=false
+- NPM_VERSION=$(npm version patch)
+- git commit -a -m "${NPM_VERSION:1}" -m "[ci skip]"
+- git remote remove origin
+- git remote add origin https://${GITHUB_TOKEN}@github.com/xpl/panic-overlay.git
+- git push origin HEAD:master
+deploy:
+  provider: npm
+  email: rocket.mind@gmail.com
+  api_key:
+    secure: Hxf49Bhi1RKEiEWlucwGmGtizTZohWvCUPSn0ODu3Xgp0vPBAnMrkgKalPKTAbGB8bwdRtpBFWVIyFXmUIoTiRQGnP1WFw/Lxao8yO8bSvybi2a8U5ZSXK6/JssLM1kPLG4VRBOifHvnT8RYLZBoEAT4RMBxzEYXVJAjxDmixkiNEEmdipZjlr8x/DJ3PMmD4+XKse6GSkinJBLqZQFBMk9TJY3XpQ7jCH6muFk7nMCBLW5x+I0bwqcOeY1SKOU/8fP7/0ws0kcU5Q08YrbC1ipRHKCl53Th6YUvbcBBY1b71Gh3j6r1scCX3MOvVGiU605KxQ+P7njj8dNXXKXRF6yIkkSXETNOwlomlJS6YWhlV0f+IHlGfNWX4MXqGkWbMwofECz+mVRKiMFgL5LE7OZv2CndUeKDx8qEsAXru/BN2M93GYw+C3p1yvt/uWIiAb40GGzzHtffMgjiER8erIUJmI5rngy2w4Tb1VUXWGo4Nkl6boLHWr/lRE1nsT4QiT1Si9nHLOG5TOQAvSp/QsNPIhSez2JlpEg8CZvOr0ZP/RDCs1v5UOlEoglH2WSJCwN/TjJThhWs5nbmVPvDJUO/3XFAnGlQtFZ2oWv3aMqfTWLbvqeUycOtSk62LewIuNNXMZfglcHcMNrzoxZvSZCPbGOE5X6kJSknMobg3wI=
+env:
+  global:
+    secure: RglVNjOKVHVYd2xTxjKDQm7lCEd9SPxld18DnAMPzIWJdPbjkDF2prIhmu24iEZxNQJVRv74hqG3wo1kPYtPE4On4d5huBgRiThvI5dcJuZ1W1IPrHsqjtDJuv1ab0oH8WCLIOnFaLgXSK3TeLCa2UkYGnlJNmuoi6sBJXQ78RBUjVfPNQ8wgMfKYC8WhvRPKKyO0S+rlm1liXDbpb5YilU086KqErS2clkqNQPALRTMVfM3TbfHX9ex1Ca+5tv4TE4kHVgC1F0iQV31KMnnajPbMykcQOkFTdKJAuWNsBttudRvnVVO7pHUWRj7wmRe17KfdsqHm2rhK28bT2KUzJrjhXKrZrGKsuqCSiwzu7MiwxU7Wp5h74R/guLrJP/fxgX3bsXmfpQjni9iXDq07HEMjQw17+CJEme4SGoJad/2UszNLG8BHd7K2p/Z7VPPqajN3mPQeDQCwVIeAgAOUVE/r+ajOZ6Kfu6/1pIw27wIjXHVUNFxZegq7ZmEdy+CYMjaBf8kwbfGrK659ZzmmO2T5PjjJKmAGy+Dm5QHEV4tIN5y8hcPkvwGQgAHDGCmizvyNjIgFfafZUjqBAHRy2o6uK12nMkyrEfBJvWJCUXqY7e+1sIqtdyIOyCWof6Qd5ehh5pAM2h0KlA1aWd6cDi7VypMLS5v4wtDsvur9XE=
