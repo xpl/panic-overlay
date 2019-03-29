@@ -62,7 +62,7 @@ panic.configure ({ projectRoot: '/full/path/to/my/project' })
 
 You can intercept clicks on call stack entries. For the `entry` format, [see this](https://github.com/xpl/stacktracey#how-to).
 
-```
+```javascript
 panic.configure ({
     stackEntryClicked (entry) {
         alert (`Clicked on ${entry.fileRelative}:${entry.line}:${entry.column}`
