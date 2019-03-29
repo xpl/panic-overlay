@@ -32,6 +32,22 @@ import 'panic-overlay'
 -TO BE IMPLEMENTED
 ```
 
+## Disabling Automatic Error Handling
+
+Once imported, `panic-overlay` shows itself whenever an uncaught error occurs in a browser. You can disable that behavior:
+
+```javascript
+import panic from 'panic-overlay'
+
+panic.configure ({ handleErrors: false })
+```
+
+## Showing Manually
+
+```javascript
+panic (error) // where error is either an instance of an Error or a string taken from Error.stack
+```
+
 ## VS Code Notes
 
 Currently there is a problem with automatically determining the full file paths, so you need to provide it manually, otherwise the error locations won't be clickable:
@@ -40,6 +56,18 @@ Currently there is a problem with automatically determining the full file paths,
 import panic from 'panic-overlay'
 
 panic.configure ({ projectRoot: '/full/path/to/my/project' })
+```
+
+## Custom Click Handler
+
+You can intercept clicks on call stack entries. For the `entry` format, [see this](https://github.com/xpl/stacktracey#how-to).
+
+```
+panic.configure ({
+    stackEntryClicked (entry) {
+        alert (`Clicked on ${entry.fileRelative}:${entry.line}:${entry.column}`
+    }
+})
 ```
 
 ## TODO
