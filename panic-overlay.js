@@ -28,7 +28,7 @@ const h = nanoscript ('panic-overlay__')
 
 /*  CSS --------------------------------------------------------------------------    */
 
-document.head.appendChild (h ('style', `
+const style = h ('style', `
 
 .panic-overlay__modal {
     
@@ -260,13 +260,14 @@ document.head.appendChild (h ('style', `
     }
 }
 
-`))
+`)
 
 /*  CONFIGURATION --------------------------------------------------------------------------    */
 
 const defaultConfig = {
 
-    projectRoot: undefined,
+    handleErrors: true,
+    projectRoot:  undefined,
 
     stackEntryClicked (entry) {
         if (this.projectRoot) {
@@ -370,31 +371,41 @@ function panic (err) {
     return panic
 }
 
-window.addEventListener ('error', e => { panic (e.error) })
+/*  VISIBILITY ON/OFF --------------------------------------------------------------------------    */
 
 let visible = false
 
 function toggle (yes) {
-    if (document.body) document.body.classList.toggle ('panic-overlay__visible', yes)
+
+    if (document.body) {
+        if (yes) {
+            document.head.appendChild (style)
+            document.body.appendChild (modal)
+        }
+        document.body.classList.toggle ('panic-overlay__visible', yes)
+    }
+
     modal.classList.toggle ('panic-overlay__hidden', !yes)
+    
     if (visible && !yes) { // clear on hide
         errors.innerText = '' 
         modal.classList.add ('panic-overlay__collapsed')
     }
+
     visible = yes
     return panic
 }
+
+/*  EVENTS --------------------------------------------------------------------------    */
+
+window.addEventListener ('error', e => { if (config.handleErrors) panic (e.error) })
 
 ;(function onReady (fn) {
 
     if (document.body) fn ()
     else document.addEventListener ('DOMContentLoaded', fn)
 
-}) (() => {
-
-    document.body.appendChild (modal)
-    toggle (visible)
-})
+}) (() => { toggle (visible) })
 
 /*  EXPORT --------------------------------------------------------------------------    */
 
