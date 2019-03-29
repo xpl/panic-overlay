@@ -65,7 +65,7 @@ You can intercept clicks on call stack entries. For the `entry` format, [see thi
 ```javascript
 panic.configure ({
     stackEntryClicked (entry) {
-        alert (`Clicked on ${entry.fileRelative}:${entry.line}:${entry.column}`
+        alert (`Clicked on ${entry.fileRelative}:${entry.line}:${entry.column}`)
     }
 })
 ```
