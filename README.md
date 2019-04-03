@@ -23,7 +23,7 @@ npm install panic-overlay
 ```
 
 ```javascript
-import 'panic-overlay'
+import 'panic-overlay' // should be the very first import in your app!
 ```
 
 ## Using Without A Bundler
