@@ -77,3 +77,13 @@ panic.configure ({
 ## Hacking
 
 The `panic-overlay` is just a GUI for the [**`stacktracey`**](https://github.com/xpl/stacktracey) library that provides all the magic related to callstack parsing, source code extraction and filtering of the clutter. I also maintain that library, so any contributions to its code are welcome as well.
+
+## See Also
+
+There is also a way to improve your Node errors legibility by using the [Ololog](https://github.com/xpl/ololog) library which is built on the same stack and is maintained by me also:
+
+<a href="https://github.com/xpl/ololog"><img width="1091" alt="Screen Shot 2019-04-06 at 00 56 17" src="https://user-images.githubusercontent.com/1707/55658599-d8b06e00-5806-11e9-935c-32a11d689c92.png"></a>
+
+```javascript
+const log = require ('ololog').handleNodeErrors ()
+```
