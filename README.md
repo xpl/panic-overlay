@@ -80,10 +80,18 @@ The `panic-overlay` is just a GUI for the [**`stacktracey`**](https://github.com
 
 ## See Also
 
-There is also a way to improve your Node errors legibility by using the [Ololog](https://github.com/xpl/ololog) library which is built on the same stack and is maintained by me also:
+There is also a way to improve your Node errors (and the overall debug output) legibility by using the **[Ololog](https://github.com/xpl/ololog)** library which is built on the same stack and is maintained by me also. Check it out!
+
+```javascript
+const log = require ('ololog').handleNodeErrors () // intercepts process errors
+```
 
 <a href="https://github.com/xpl/ololog"><img width="1091" alt="Screen Shot 2019-04-06 at 00 56 17" src="https://user-images.githubusercontent.com/1707/55658599-d8b06e00-5806-11e9-935c-32a11d689c92.png"></a>
 
+Showing locations of log calls:
+
 ```javascript
-const log = require ('ololog').handleNodeErrors ()
+log.bright.green ('Syncing order books...')
 ```
+
+<img width="511" alt="Screen Shot 2019-04-06 at 01 00 10" src="https://user-images.githubusercontent.com/1707/55658763-73a94800-5807-11e9-994e-c74d946b35e1.png">
