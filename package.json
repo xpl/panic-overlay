@@ -5,6 +5,7 @@
   "main": "panic-overlay.js",
   "esnext": "panic-overlay.js",
   "module": "panic-overlay.js",
+  "types": "panic-overlay.d.ts",
   "scripts": {
     "demo-parcel-vanilla": "cd demo/parcel-vanilla && parcel index.html",
     "demo-parcel-react": "cd demo/parcel-react && parcel index.html",
