@@ -3,7 +3,8 @@ declare interface panic {
     toggle (visible: boolean): panic;
     configure (config: {
         projectRoot?: string,
-        handleErrors?: boolean
+        handleErrors?: boolean,
+        stackEntryClicked?: (entry: object) => void;
     }): panic;
 }
 
