@@ -23,7 +23,7 @@ npm install panic-overlay
 ```
 
 ```javascript
-import 'panic-overlay'
+import 'panic-overlay' // should be the very first import in your app!
 ```
 
 ## Using Without A Bundler
@@ -62,10 +62,10 @@ panic.configure ({ projectRoot: '/full/path/to/my/project' })
 
 You can intercept clicks on call stack entries. For the `entry` format, [see this](https://github.com/xpl/stacktracey#how-to).
 
-```
+```javascript
 panic.configure ({
     stackEntryClicked (entry) {
-        alert (`Clicked on ${entry.fileRelative}:${entry.line}:${entry.column}`
+        alert (`Clicked on ${entry.fileRelative}:${entry.line}:${entry.column}`)
     }
 })
 ```
@@ -77,3 +77,21 @@ panic.configure ({
 ## Hacking
 
 The `panic-overlay` is just a GUI for the [**`stacktracey`**](https://github.com/xpl/stacktracey) library that provides all the magic related to callstack parsing, source code extraction and filtering of the clutter. I also maintain that library, so any contributions to its code are welcome as well.
+
+## See Also
+
+There is also a way to improve your Node errors (and the overall debug output) legibility by using the **[Ololog](https://github.com/xpl/ololog)** library which is built on the same stack and is maintained by me also. Check it out!
+
+```javascript
+const log = require ('ololog').handleNodeErrors () // intercepts process errors
+```
+
+<a href="https://github.com/xpl/ololog"><img width="1091" alt="Screen Shot 2019-04-06 at 00 56 17" src="https://user-images.githubusercontent.com/1707/55658599-d8b06e00-5806-11e9-935c-32a11d689c92.png"></a>
+
+Showing locations of log calls:
+
+```javascript
+log.bright.green ('Syncing order books...')
+```
+
+<img width="511" alt="Screen Shot 2019-04-06 at 01 00 10" src="https://user-images.githubusercontent.com/1707/55658763-73a94800-5807-11e9-994e-c74d946b35e1.png">
