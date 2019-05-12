@@ -8,6 +8,7 @@
   "types": "panic-overlay.d.ts",
   "scripts": {
     "demo-parcel-vanilla": "cd demo/parcel-vanilla && parcel index.html",
+    "demo-parcel-vanilla-async": "cd demo/parcel-vanilla-async && parcel index.html",
     "demo-parcel-react": "cd demo/parcel-react && parcel index.html",
     "lint": "eslint panic-overlay.js",
     "build": "npm run lint"

@@ -398,7 +398,10 @@ function toggle (yes) {
 
 /*  EVENTS --------------------------------------------------------------------------    */
 
-window.addEventListener ('error', e => { if (config.handleErrors) panic (e.error) })
+function onUncaughtError (e) { if (config.handleErrors) panic (e) }
+
+window.addEventListener ('error',              e => onUncaughtError (e.error))
+window.addEventListener ('unhandledrejection', e => onUncaughtError (e.reason))
 
 ;(function onReady (fn) {
 
