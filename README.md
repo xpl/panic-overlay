@@ -28,8 +28,13 @@ import 'panic-overlay' // should be the very first import in your app!
 
 ## Using Without A Bundler
 
-```diff
--TO BE IMPLEMENTED
+All-in-one browser bundle (batteries included), served from a CDN of your choice. Creates a global `panic` object.
+
+- jsDelivr: https://cdn.jsdelivr.net/npm/panic-overlay/build/panic-overlay.browser.js
+- unpkg: https://unpkg.com/panic-overlay
+
+```html
+<script src="https://unpkg.com/panic-overlay"></script>
 ```
 
 ## Disabling Automatic Error Handling

@@ -6,12 +6,15 @@
   "esnext": "panic-overlay.js",
   "module": "panic-overlay.js",
   "types": "panic-overlay.d.ts",
+  "unpkg": "build/panic-overlay.browser.js",
   "scripts": {
+    "demo-no-bundler": "cp build/panic-overlay.browser.js demo/no-bundler && cd demo/no-bundler && npx live-server",
     "demo-parcel-vanilla": "cd demo/parcel-vanilla && parcel index.html",
     "demo-parcel-vanilla-async": "cd demo/parcel-vanilla-async && parcel index.html",
     "demo-parcel-react": "cd demo/parcel-react && parcel index.html",
     "lint": "eslint panic-overlay.js",
-    "build": "npm run lint"
+    "browserify": "browserify --debug ./panic-overlay.browser.js -t [ babelify --presets [ @babel/preset-env ] ] > ./build/panic-overlay.browser.js",
+    "build": "npm run lint && npm run browserify"
   },
   "repository": {
     "type": "git",
@@ -45,8 +48,10 @@
   },
   "homepage": "https://github.com/xpl/panic-overlay",
   "devDependencies": {
-    "@babel/core": "^7.3.4",
+    "@babel/core": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
     "eslint": "^4.19.1",
     "parcel-bundler": "^1.12.3",
     "react": "^16.8.4",
