@@ -1,3 +1,9 @@
+/*
+
+    Run with this demo with "npm run demo-parcel-react" (in the repo root directory).
+    
+*/
+
 import panic from '../../panic-overlay'
 import React from 'react'
 import ReactDOM from 'react-dom'

@@ -3,6 +3,7 @@
 .cache
 demo/*/.cache
 demo/*/dist
+demo/no-bundler/panic-overlay.browser.js
 dist
 
 # Logs
