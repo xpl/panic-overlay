@@ -50,7 +50,7 @@ panic (error) // where error is either an instance of an Error or a string taken
 
 ## VS Code Notes
 
-Currently there is a problem with automatically determining the full file paths, so you need to provide it manually, otherwise the error locations won't be clickable:
+Currently there is a problem with automatically determining the full file paths (at least, when using Parcel bundler), so you need to provide it manually, otherwise the error locations won't be clickable:
 
 ```javascript
 import panic from 'panic-overlay'
