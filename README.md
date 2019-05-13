@@ -7,9 +7,9 @@ If you miss that thing from `create-react-app` but do not want to use that frame
 ## Features
 
 - Displays runtime errors in browsers
+- Minimalistic implementation (bare DOM API), [easily hackable](https://github.com/xpl/panic-overlay/blob/master/README.md#hacking)
 - Full sourcemap support (shows original code, not transpiled)
 - Clickable locations (opens in VS Code), [see the notes here](https://github.com/xpl/panic-overlay#vs-code-notes)
-- Minimalistic implementation (bare DOM API), easily hackable
 - Uncluttered stacktraces (collapses third party library calls)
 
 ## How It Looks
@@ -55,7 +55,7 @@ panic (error) // where error is either an instance of an Error or a string taken
 
 ## VS Code Notes
 
-Currently there is a problem with automatically determining the full file paths, so you need to provide it manually, otherwise the error locations won't be clickable:
+Currently there is a problem with automatically determining the full file paths (at least, when using Parcel bundler), so you need to provide it manually, otherwise the error locations won't be clickable:
 
 ```javascript
 import panic from 'panic-overlay'
@@ -75,13 +75,15 @@ panic.configure ({
 })
 ```
 
-## TODO
-
-- [ ] Implement parsing of React JSX errors ([see more here](https://github.com/parcel-bundler/parcel/issues/2765))
-
 ## Hacking
 
 The `panic-overlay` is just a GUI for the [**`stacktracey`**](https://github.com/xpl/stacktracey) library that provides all the magic related to callstack parsing, source code extraction and filtering of the clutter. I also maintain that library, so any contributions to its code are welcome as well.
+
+I highly appreciate any help from the community with the following:
+
+- [ ] Implementing parsing of React JSX errors in [**`stacktracey`**](https://github.com/xpl/stacktracey) ([see more here](https://github.com/parcel-bundler/parcel/issues/2765))
+- [ ] Determining the full file paths for [clickable locations](https://github.com/xpl/panic-overlay#vs-code-notes)
+- [ ] Animations & better layout (probably need to center it for wide screens)
 
 ## See Also
 
