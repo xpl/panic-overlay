@@ -7,9 +7,9 @@ If you miss that thing from `create-react-app` but do not want to use that frame
 ## Features
 
 - Displays runtime errors in browsers
+- Minimalistic implementation (bare DOM API), easily hackable
 - Full sourcemap support (shows original code, not transpiled)
 - Clickable locations (opens in VS Code), [see the notes here](https://github.com/xpl/panic-overlay#vs-code-notes)
-- Minimalistic implementation (bare DOM API), easily hackable
 - Uncluttered stacktraces (collapses third party library calls)
 
 ## How It Looks
