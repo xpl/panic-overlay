@@ -337,6 +337,10 @@ function panic (err) {
     const stack = (new StackTracey (err)).withSources
     const indexText = stack.clean.pretty
 
+    window.stack = stack
+    window.stackText = err.stack
+    console.log (err.stack)
+
     // Deduplication
     for (const el of errors.childNodes) {
         if (el._indexText === indexText) {
