@@ -2,7 +2,7 @@
 
 A lightweight standalone plain JS alternative to `react-error-overlay` that is not tied to React / Webpack and works with any framework or even without one.
 
-If you miss that thing from `create-react-app` but do not want to use that framework (e.g. you want to use [Parcel](https://parceljs.org/) as a lightweight alternative) — here you go!
+If you miss that thing from `create-react-app` but do not want to use that framework (e.g. you want to use [Parcel](https://parceljs.org/) as a lightweight zero-configuration alternative) — here you go!
 
 ## Features
 
@@ -36,6 +36,24 @@ All-in-one browser bundle (batteries included), served from a CDN of your choice
 ```html
 <script src="https://unpkg.com/panic-overlay"></script>
 ```
+
+## Demos
+
+Here's how you can examine an example usage of `panic-overlay` in various development environments:
+
+```sh
+git clone https://github.com/xpl/panic-overlay.git
+cd panic-overlay
+npm install
+```
+
+| Environment             | Run with                            | Source folder                                             |
+| ----------------------- | ----------------------------------- | --------------------------------------------------------- |
+| `<script>` tag          | `npm run demo-no-bundler`           | [`demo/no-bundler`](/demo/no-bundler)                     |
+| Parcel (Vanilla)        | `npm run demo-parcel-vanilla`       | [`demo/parcel-vanilla`](/demo/parcel-vanilla)             |
+| Parcel (Vanilla, async) | `npm run demo-parcel-vanilla-async` | [`demo/parcel-vanilla-async`](/demo/parcel-vanilla-async) |
+| Parcel (React JSX)      | `npm run demo-parcel-react`         | [`demo/parcel-react`](/demo/parcel-react)                 |
+| Webpack (Vanilla)       | `npm run demo-webpack-vanilla`      | [`demo/webpack-vanilla`](/demo/webpack-vanilla)           |
 
 ## Disabling Automatic Error Handling
 
