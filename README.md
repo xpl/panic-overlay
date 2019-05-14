@@ -50,9 +50,9 @@ npm install
 | Environment             | Run with                            | Source folder                                             |
 | ----------------------- | ----------------------------------- | --------------------------------------------------------- |
 | `<script>` tag          | `npm run demo-no-bundler`           | [`demo/no-bundler`](/demo/no-bundler)                     |
-| Parcel (Vanilla)        | `npm run demo-parcel-vanilla`       | [`demo/parcel-vanilla`](/demo/parcel-vanilla)             |
+| Parcel                  | `npm run demo-parcel-vanilla`       | [`demo/parcel-vanilla`](/demo/parcel-vanilla)             |
 | Parcel (React JSX)      | `npm run demo-parcel-react`         | [`demo/parcel-react`](/demo/parcel-react)                 |
-| Webpack (Vanilla)       | `npm run demo-webpack-vanilla`      | [`demo/webpack-vanilla`](/demo/webpack-vanilla)           |
+| Webpack                 | `npm run demo-webpack-vanilla`      | [`demo/webpack-vanilla`](/demo/webpack-vanilla)           |
 
 ## Disabling Automatic Error Handling
 
