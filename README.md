@@ -51,7 +51,6 @@ npm install
 | ----------------------- | ----------------------------------- | --------------------------------------------------------- |
 | `<script>` tag          | `npm run demo-no-bundler`           | [`demo/no-bundler`](/demo/no-bundler)                     |
 | Parcel (Vanilla)        | `npm run demo-parcel-vanilla`       | [`demo/parcel-vanilla`](/demo/parcel-vanilla)             |
-| Parcel (Vanilla, async) | `npm run demo-parcel-vanilla-async` | [`demo/parcel-vanilla-async`](/demo/parcel-vanilla-async) |
 | Parcel (React JSX)      | `npm run demo-parcel-react`         | [`demo/parcel-react`](/demo/parcel-react)                 |
 | Webpack (Vanilla)       | `npm run demo-webpack-vanilla`      | [`demo/webpack-vanilla`](/demo/webpack-vanilla)           |
 
