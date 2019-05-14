@@ -39,7 +39,7 @@ All-in-one browser bundle (batteries included), served from a CDN of your choice
 
 ## Demos
 
-Here's how you can examine an example usage of `panic-overlay` in various development environments:
+Here's how you can find an example usage of `panic-overlay` in various development environments:
 
 ```sh
 git clone https://github.com/xpl/panic-overlay.git
