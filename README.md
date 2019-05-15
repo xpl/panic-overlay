@@ -103,7 +103,7 @@ I highly appreciate any help from the community with the following:
 - [ ] Determining the full file paths for [clickable locations](https://github.com/xpl/panic-overlay#vs-code-notes)
 - [ ] Animations & better layout (probably need to center it for wide screens)
 
-## See Also
+## ...One More Thing™
 
 There is also a way to improve your Node errors (and the overall debug output) legibility by using the **[Ololog](https://github.com/xpl/ololog)** library which is built on the same stack and is maintained by me also. Check it out!
 
