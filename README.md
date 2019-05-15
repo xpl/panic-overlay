@@ -98,6 +98,7 @@ The `panic-overlay` is just a GUI for the [**`stacktracey`**](https://github.com
 
 I highly appreciate any help from the community with the following:
 
+- [ ] Testing with various module bundlers / frameworks
 - [ ] Implementing parsing of React JSX errors in [**`stacktracey`**](https://github.com/xpl/stacktracey) ([see more here](https://github.com/parcel-bundler/parcel/issues/2765))
 - [ ] Determining the full file paths for [clickable locations](https://github.com/xpl/panic-overlay#vs-code-notes)
 - [ ] Animations & better layout (probably need to center it for wide screens)
