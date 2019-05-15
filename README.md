@@ -113,7 +113,7 @@ const log = require ('ololog').handleNodeErrors () // intercepts process errors
 
 <a href="https://github.com/xpl/ololog"><img width="1091" alt="Screen Shot 2019-04-06 at 00 56 17" src="https://user-images.githubusercontent.com/1707/55658599-d8b06e00-5806-11e9-935c-32a11d689c92.png"></a>
 
-Showing locations of log calls:
+Color logging with _displaying of the log call location_ (file + line):
 
 ```javascript
 log.bright.green ('Syncing order books...')
