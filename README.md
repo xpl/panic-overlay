@@ -116,7 +116,7 @@ const log = require ('ololog').handleNodeErrors () // intercepts process errors
 Color logging with _displaying of the log call location_ (file + line):
 
 ```javascript
-log.bright.green ('Syncing order books...')
+log.bright.green ('Syncing order books...') // will render with a location tag, so you can quickly find out where it was called
 ```
 
-<img width="511" alt="Screen Shot 2019-04-06 at 01 00 10" src="https://user-images.githubusercontent.com/1707/55658763-73a94800-5807-11e9-994e-c74d946b35e1.png">
+<img width="423" alt="Screen Shot 2019-05-15 at 17 38 15" src="https://user-images.githubusercontent.com/1707/57784232-3f934200-7738-11e9-8136-d2cc88879c92.png">
