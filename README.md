@@ -105,7 +105,7 @@ I highly appreciate any help from the community with the following:
 
 ## ...One More Thing™
 
-There is also a way to improve your Node errors (and the overall debug output) legibility by using the **[Ololog](https://github.com/xpl/ololog)** library which is built on the same stack and is maintained by me also. Check it out!
+There is also a way to improve your Node errors (and the overall debug output) legibility by using the **[`Ololog`](https://github.com/xpl/ololog)** library which is built on the same stack and is maintained by me also. Check it out!
 
 ```javascript
 const log = require ('ololog').handleNodeErrors () // intercepts process errors
