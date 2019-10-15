@@ -349,11 +349,13 @@ function panic (err) {
     }
 
     const showMore = () => modal.classList.remove ('panic-overlay__collapsed')
+    
+    const type = (err && (err.type || (err.constructor && err.constructor.name))) || typeof err
 
     const el = h ('.error', { _indexText: indexText }, [
                     h ('.error-title', [
-                        h ('span.error-type', [err.type || err.constructor.name,  h ('span.error-counter', { style: 'display: none;' })]),
-                        h ('span.error-message', err.message),
+                        h ('span.error-type', [String (type), h ('span.error-counter', { style: 'display: none;' })]),
+                        h ('span.error-message', String (err && err.message)),
                     ]),
                     h ('.error-stack', [
                         ...stack.map ((e, i) => renderStackEntry (e, i, err.message)),
