@@ -350,15 +350,16 @@ function panic (err) {
 
     const showMore = () => modal.classList.remove ('panic-overlay__collapsed')
     
-    const type = (err && (err.type || (err.constructor && err.constructor.name))) || typeof err
+    const type = String ((err && (err.type || (err.constructor && err.constructor.name))) || typeof err)
+    const msg  = String (err && err.message)
 
     const el = h ('.error', { _indexText: indexText }, [
                     h ('.error-title', [
-                        h ('span.error-type', [String (type), h ('span.error-counter', { style: 'display: none;' })]),
-                        h ('span.error-message', String (err && err.message)),
+                        h ('span.error-type', [type, h ('span.error-counter', { style: 'display: none;' })]),
+                        h ('span.error-message', msg),
                     ]),
                     h ('.error-stack', [
-                        ...stack.map ((e, i) => renderStackEntry (e, i, err.message)),
+                        ...stack.map ((e, i) => renderStackEntry (e, i, msg)),
                         h ('.more', h ('em', { onclick: showMore }, 'show more'))
                     ])
                 ])
