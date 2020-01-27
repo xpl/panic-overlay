@@ -54,7 +54,7 @@
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
     "eslint": "^4.19.1",
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "^1.12.4",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "webpack": "^4.31.0",
