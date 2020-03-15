@@ -56,13 +56,15 @@ npm install
 
 ## Disabling Automatic Error Handling
 
-Once imported, `panic-overlay` shows itself whenever an uncaught error occurs in a browser. You can disable that behavior:
+Once imported, `panic-overlay` shows itself whenever an uncaught error occurs in a browser. This can be undesirable in a production environment. You can disable that behavior in run-time:
 
 ```javascript
 import panic from 'panic-overlay'
 
 panic.configure ({ handleErrors: false })
 ```
+
+Although it is better to _not import_ the `panic-overlay` in a production build, to minimize the bundle size. Unfortunately, there is no universal way to do a conditional module import at compile-time — in each bundler/framework it is achieved in its own way.
 
 ## Showing Manually
 
