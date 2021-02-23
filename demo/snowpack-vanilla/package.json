@@ -4,5 +4,8 @@
   "description": "Demo",
   "main": "index.js",
   "type": "module",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "panic-overlay": "^1.0.44"
+  }
 }
