@@ -39,7 +39,7 @@ All-in-one browser bundle (batteries included), served from a CDN of your choice
 
 ## Demos
 
-Here's how you can find an example usage of `panic-overlay` in various development environments:
+Here's how you can find an example usage of `panic-overlay` with various bundlers:
 
 ```sh
 git clone https://github.com/xpl/panic-overlay.git
@@ -53,6 +53,7 @@ npm install
 | Parcel                  | `npm run demo-parcel-vanilla`       | [`demo/parcel-vanilla`](/demo/parcel-vanilla)             |
 | Parcel (React JSX)      | `npm run demo-parcel-react`         | [`demo/parcel-react`](/demo/parcel-react)                 |
 | Webpack                 | `npm run demo-webpack-vanilla`      | [`demo/webpack-vanilla`](/demo/webpack-vanilla)           |
+| Snowpack                | `npm run demo-snowpack-vanilla`     | [`demo/snowpack-vanilla`](/demo/snowpack-vanilla)         |
 
 ## Disabling Automatic Error Handling
 
