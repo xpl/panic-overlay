@@ -1,0 +1,7 @@
+{
+  "name": "panic-overlay-demo",
+  "version": "1.0.0",
+  "description": "Demo",
+  "main": "index.html",
+  "private": true
+}

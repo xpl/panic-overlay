@@ -9,9 +9,9 @@
   "unpkg": "build/panic-overlay.browser.js",
   "scripts": {
     "demo-no-bundler": "cp build/panic-overlay.browser.js demo/no-bundler && cd demo/no-bundler && npx live-server",
-    "demo-parcel-vanilla": "cd demo/parcel-vanilla && parcel index.html",
-    "demo-parcel-vanilla-async": "cd demo/parcel-vanilla-async && parcel index.html",
-    "demo-parcel-react": "cd demo/parcel-react && parcel index.html",
+    "demo-parcel-vanilla": "rm -rf .parcel-cache && cd demo/parcel-vanilla && rm -rf dist && parcel index.html",
+    "demo-parcel-vanilla-async": "rm -rf .parcel-cache && cd demo/parcel-vanilla-async && rm -rf dist && parcel index.html",
+    "demo-parcel-react": "rm -rf .parcel-cache && cd demo/parcel-react && rm -rf dist && parcel index.html",
     "demo-webpack-vanilla": "cd demo/webpack-vanilla && npx webpack-dev-server",
     "lint": "eslint panic-overlay.js",
     "browserify": "browserify --debug ./panic-overlay.browser.js -t [ babelify --presets [ @babel/preset-env ] ] > ./build/panic-overlay.browser.js",
@@ -54,7 +54,6 @@
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
     "eslint": "^4.19.1",
-    "parcel-bundler": "^1.12.4",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "webpack": "^4.31.0",
@@ -62,6 +61,7 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
-    "stacktracey": "^1.2.112"
+    "parcel": "^2.0.0-beta.1",
+    "stacktracey": "^2.0.16"
   }
 }

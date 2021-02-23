@@ -291,7 +291,7 @@ const shouldHideEntry = (entry, i) => (entry.thirdParty || entry['native'] || en
 
 function renderStackEntry (entry, i, message) {
 
-    const { sourceFile = { lines: [] }, line, column, fileShort, calleeShort, fileRelative } = entry
+    const { sourceFile = { lines: [] }, line, column, fileShort, calleeShort } = entry
 
     const lineIndex = line - 1
     const maxLines  = sourceFile.lines.length
@@ -334,8 +334,8 @@ function renderHighlightedLine (text, column, msg) {
 
 function panic (err) {
 
-    const stack = (new StackTracey (err)).withSources
-    const indexText = stack.clean.pretty
+    const stack = (new StackTracey (err)).withSources()
+    const indexText = stack.clean().asTable()
 
     // Deduplication
     for (const el of errors.childNodes) {
@@ -359,12 +359,12 @@ function panic (err) {
                         h ('span.error-message', msg),
                     ]),
                     h ('.error-stack', [
-                        ...stack.map ((e, i) => renderStackEntry (e, i, msg)),
+                        ...stack.items.map ((e, i) => renderStackEntry (e, i, msg)),
                         h ('.more', h ('em', { onclick: showMore }, 'show more'))
                     ])
                 ])
 
-    if (!stack.find (shouldHideEntry)) showMore () // hides "show more" if nothing to show
+    if (!stack.items.find (shouldHideEntry)) showMore () // hides "show more" if nothing to show
 
     errors.insertBefore (el, errors.firstChild)
     if (errors.childElementCount > 10) errors.lastChild.remove () // prevents hang in case of vast number of errors
