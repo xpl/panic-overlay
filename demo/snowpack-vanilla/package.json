@@ -1,0 +1,8 @@
+{
+  "name": "panic-overlay-demo",
+  "version": "1.0.0",
+  "description": "Demo",
+  "main": "index.js",
+  "type": "module",
+  "private": true
+}
