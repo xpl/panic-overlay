@@ -64,6 +64,6 @@
   },
   "dependencies": {
     "parcel": "^2.0.0-beta.1",
-    "stacktracey": "^2.1.2"
+    "stacktracey": "^2.1.4"
   }
 }
