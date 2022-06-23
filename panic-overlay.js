@@ -403,7 +403,13 @@ function toggle (yes) {
 
 function onUncaughtError (e) { if (config.handleErrors) panic (e) }
 
-window.addEventListener ('error',              e => onUncaughtError (e.error))
+window.addEventListener ('error', e => {
+    if (!e.error) {
+        onUncaughtError (e.message)
+        return
+    }
+    onUncaughtError (e.error)
+})
 window.addEventListener ('unhandledrejection', e => onUncaughtError (e.reason))
 
 ;(function onReady (fn) {
